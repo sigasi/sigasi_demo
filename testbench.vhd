@@ -3,6 +3,7 @@ use IEEE.std_logic_1164.all;
 
 -- Test bench for Sigasi Tutorial Project.
 entity testbench is
+	generic(half_iterations : integer := 50);
 end entity testbench;
 
 architecture STR of testbench is
@@ -12,18 +13,20 @@ architecture STR of testbench is
 	signal start    : std_logic;
 	signal clk      : std_logic;
 	signal rst      : std_logic;
-	constant PERIOD : time := 50 ns;    -- Half the clock period. The frequency will be 1/(2*PERIOD) = 100 MHz
 
 begin
 	clock_generator_instance : entity work.clock_generator(BEH)
 		generic map(
-			PERIOD => PERIOD
+			PERIOD => 50 ns
 		)
 		port map(
 			clk => clk
 		);
 
 	dut_instance : entity work.dut(RTL)
+		generic map(
+			iterations => half_iterations * 2
+		)
 		port map(
 			data_out => data_out,
 			data_in  => data_in,
