@@ -9,4 +9,6 @@ package constants is
 
 	type state_t is (idle, preparing, running, ready);
 
+	type color_t is (red, orange, yellow, green, blue, indigo, violet);
+
 end package constants;
