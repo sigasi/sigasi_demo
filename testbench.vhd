@@ -1,14 +1,14 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
-
+use ieee.numeric_std.all;
 -- Test bench for Sigasi Tutorial Project.
 entity testbench is
 	generic(half_iterations : integer := 50);
 end entity testbench;
 
 architecture STR of testbench is
-	signal data_out : std_logic_vector(7 downto 0);
-	signal data_in  : std_logic_vector(7 downto 0);
+	signal data_out : unsigned(7 downto 0);
+	signal data_in  : unsigned(7 downto 0);
 	signal valid    : std_logic;
 	signal start    : std_logic;
 	signal clk      : std_logic;
