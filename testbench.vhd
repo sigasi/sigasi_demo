@@ -15,14 +15,6 @@ architecture STR of testbench is
 	signal rst      : std_logic;
 
 begin
-	clock_generator_instance : entity work.clock_generator(BEH)
-		generic map(
-			PERIOD => 50 ns
-		)
-		port map(
-			clk => clk
-		);
-
 	dut_instance : entity work.dut(RTL)
 		generic map(
 			iterations => half_iterations * 2
@@ -36,4 +28,6 @@ begin
 			rst      => rst
 		);
 
+	assert valid = '0' or data_out /= "00000000";
+	
 end architecture STR;
