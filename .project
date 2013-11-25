@@ -29,7 +29,7 @@
 		<link>
 			<name>Common Libraries/IEEE Synopsys</name>
 			<type>2</type>
-			<locationURI>sigasiresource:/vhdl/93/IEEE%20Synopsys</locationURI>
+			<locationURI>sigasiresource:/vhdl/2008/IEEE%20Synopsys</locationURI>
 		</link>
 		<link>
 			<name>Common Libraries/STD</name>
